@@ -7,6 +7,7 @@
     <author email="rex.houy@gmail.com" href="http://www.rexhouy.com">
         HouYu
     </author>
+
     <content src="index.html" />
     <preference name="permissions" value="none" />
     <preference name="orientation" value="default" />
@@ -38,7 +39,7 @@
     <gap:plugin name="org.apache.cordova.globalization" source="npm" />
     <gap:plugin name="org.apache.cordova.inappbrowser" source="npm" />
     <gap:plugin name="org.apache.cordova.media" source="npm" />
-    <gap:plugin name="org.apache.cordova.network-informati source="npm"on" />
+    <gap:plugin name="org.apache.cordova.network-information" source="npm" />
     <gap:plugin name="org.apache.cordova.splashscreen" source="npm" />
     <gap:plugin name="org.apache.cordova.vibration" source="npm" />
     <icon src="icon.png" />
