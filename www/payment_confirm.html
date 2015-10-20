@@ -1,0 +1,71 @@
+<header style="box-shadow:0px 4px 8px #bbb;">
+  <div class="container" style="height:inherit;">
+    <div style="display:block;width:100%;height:inherit;">
+      <div style="display:table;height:inherit">
+        <a ng-href="#/pay" type="button" class="btn" style="height:inherit;margin-left:-15px;display:table;">
+          <i class="material-icons" style="font-size:24px;display:table-cell;vertical-align:middle;">&#xE5C4;</i>
+        </a>
+        <h1>医保缴费支付</h1>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="container" style="padding-top:28px;padding-bottom:28px;">
+  <form class="form-horizontal" ng-submit="confirm()">
+    <div class="form-group">
+      <label for="card_no" class="col-sm-3 control-label">医保卡号</label>
+      <div class="col-sm-9">
+        <p class="form-control-static">{{card_no}}</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="identity_no" class="col-sm-3 control-label">缴费基数</label>
+      <div class="col-sm-9">
+        <p class="form-control-static">￥2000.0</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="identity_no" class="col-sm-3 control-label">缴费期数</label>
+      <div class="col-sm-9">
+        <select class="form-control" autofocus>
+          <option>201509</option>
+          <option>201510</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="identity_no" class="col-sm-3 control-label">费用总计</label>
+      <div class="col-sm-9">
+        <p class="form-control-static">￥40.0</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="tel_captcha" class="col-sm-3 control-label">支付方式</label>
+      <div class="col-sm-9">
+        <ul class="payment">
+          <li ng-class="payment=='alipay' ? 'active' : ''" ng-click="payment='alipay'">
+            <img src="img/alipay.png">
+            <label>支付宝</label>
+            <i class="glyphicon glyphicon-ok"></i>
+          </li>
+          <li ng-class="payment=='unionpay' ? 'active' : ''" ng-click="payment='unionpay'">
+            <img src="img/unionpay.png">
+            <label>银联支付</label>
+            <i class="glyphicon glyphicon-ok"></i>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="date" class="col-sm-3 control-label">&nbsp;</label>
+      <div class="col-sm-9">
+        <button class="btn btn-primary btn-lg" type="submit">确认支付</button>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-9">
+        <a ng-href="#/pay" class="btn btn-default btn-lg" style="background-color:#fff !important;">取消</a>
+      </div>
+    </div>
+  </form>
+</div>

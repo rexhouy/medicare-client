@@ -2,10 +2,14 @@
   <div class="container" style="height:inherit;">
     <div style="display:table;width:100%;height:inherit;">
       <a ng-href="#/sign_in" style="font-size: 18px;color: #fff;display: table-cell;vertical-align: middle;height: inherit;font-size:18px;color:#fff"> 登录</a>
-      <button type="button" class="btn pull-right" style="height:inherit;" ng-click="showSearch=!showSearch"><i class="glyphicon glyphicon-search"></i></button>
-      <div class="pull-right">
-        <input type="search" style="" ng-show="showSearch">
-      </div>
+      <form ng-submit="search()" style="height:inherit;">
+        <button type="button" class="btn pull-right" style="height:inherit;" ng-click="showSearch()">
+          <i class="glyphicon glyphicon-search"></i>
+        </button>
+        <div class="pull-right">
+          <input type="search" ng-show="searchInput" ng-model="searchText">
+        </div>
+      </form>
     </div>
   </div>
 </header>
@@ -37,6 +41,18 @@
       <a ng-href="#/pay">
         <i class="material-icons">&#xE227;</i>
         <h2>医保缴费</h2>
+      </a>
+    </div>
+    <div class="col-xs-3 item">
+      <a ng-href="#/payment_history">
+        <i class="material-icons">&#xE889;</i>
+        <h2>缴费历史</h2>
+      </a>
+    </div>
+    <div class="col-xs-3 item">
+      <a ng-href="#/medicine">
+        <i class="material-icons">&#xE85D;</i>
+        <h2>药品报销查询</h2>
       </a>
     </div>
     <div class="col-xs-3 item">

@@ -71,6 +71,26 @@ var medicare = angular.module('Medicare', [
                         templateUrl: 'near.html',
                         controller: 'NearCtrl'
                 })
+                .when("/payment_history", {
+                        templateUrl: 'payment_history.html',
+                        controller: 'PaymentHistoryCtrl'
+                })
+                .when("/payment_confirm", {
+                        templateUrl: 'payment_confirm.html',
+                        controller: 'PaymentConfirmCtrl'
+                })
+                .when("/search", {
+                        templateUrl: 'search.html',
+                        controller: 'SearchCtrl'
+                })
+                .when("/medicine", {
+                        templateUrl: 'medicine.html',
+                        controller: 'MedicineCtrl'
+                })
+                .when("/suggestion_success", {
+                        templateUrl: 'suggestion_success.html',
+                        controller: 'SuggestionCtrl'
+                })
                 .otherwise({
                         redirectTo: "/"
                 });

@@ -1,0 +1,80 @@
+<header style="box-shadow:0px 4px 8px #bbb;">
+  <div class="container" style="height:inherit;">
+    <div style="display:block;width:100%;height:inherit;">
+      <div style="display:table;height:inherit">
+        <a ng-href="#/" type="button" class="btn" style="height:inherit;margin-left:-15px;display:table;">
+          <i class="material-icons" style="font-size:24px;display:table-cell;vertical-align:middle;">&#xE5C4;</i>
+        </a>
+        <h1>药品报销查询</h1>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="container" style="padding-top:28px;padding-bottom:28px;">
+  <form class="form-horizontal" ng-submit="search()">
+    <div class="form-group">
+      <div class="col-sm-9">
+        <div class="input-group">
+          <input type="text" class="form-control" id="tel_captcha" required placeholder="输入药品名称查询" ng-model="searchText" autofocus>
+          <span class="input-group-btn">
+            <button class="btn" type="submit" style="background-color:#fff;border-radius:0;color:#197e7a !important;font-size:18px;">
+              <i class="glyphicon glyphicon-search"></i>
+            </button>
+          </span>
+        </div>
+      </div>
+  </form>
+  <div ng-show="!searchResult" style="text-align:center;">
+    <i class="glyphicon glyphicon-search" style="font-size:200px;color:#f5f5f5;display:block;margin:40px auto;"></i>
+  </div>
+  <div style="margin-top:12px;padding:15px;" ng-show="searchResult">
+    <ul class="list">
+      <li class="item">
+        <div class="panel panel-default">
+          <div class="panel-heading">斑蝥酸维生素B6注射液</div>
+          <ul class="panel-body">
+            <li>
+              <span class="pull-left">收费等级</span>
+              <span class="pull-right">乙类</span>
+            </li>
+            <li>
+              <span class="pull-left">剂型</span>
+              <span class="pull-right">注射剂</span>
+            </li>
+            <li>
+              <span class="pull-left">规格</span>
+              <span class="pull-right">5ml:0.05mg</span>
+            </li>
+            <li>
+              <span class="pull-left">产地</span>
+              <span class="pull-right">贵州柏强制药有限公司</span>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="item">
+        <div class="panel panel-default">
+          <div class="panel-heading">斑蝥酸维生素B6注射液</div>
+          <ul class="panel-body">
+            <li>
+              <span class="pull-left">收费等级</span>
+              <span class="pull-right">乙类</span>
+            </li>
+            <li>
+              <span class="pull-left">剂型</span>
+              <span class="pull-right">注射剂</span>
+            </li>
+            <li>
+              <span class="pull-left">规格</span>
+              <span class="pull-right">10ml:0.1mg</span>
+            </li>
+            <li>
+              <span class="pull-left">产地</span>
+              <span class="pull-right">贵州柏强制药有限公司</span>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+  </div>
