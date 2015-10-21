@@ -141,10 +141,13 @@ input::-webkit-inner-spin-button {
 .nav-pills {
     border-bottom: 1px solid #ddd;
     font-weight: bold;
-    margin-left: -15px;
-    margin-right: -15px;
-    padding-left: 15px !important;
-    padding-right: 15px !important;
+    display:table;
+    width:100%;
+}
+.nav-pills li {
+    float: none !important;
+    text-align: center;
+    display: table-cell !important;
 }
 .nav-pills li.active a {
     background: transparent !important;

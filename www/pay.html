@@ -11,7 +11,11 @@
   </div>
 </header>
 <div class="container" style="padding-top:28px;padding-bottom:28px;">
-  <form class="form-horizontal" ng-submit="confirm()">
+  <ul class="nav nav-pills">
+    <li role="presentation" ng-class="type=='people' ? 'active' : ''"><a ng-click="type='people'">居民</a></li>
+    <li role="presentation" ng-class="type=='staff' ? 'active' : ''"><a ng-click="type='staff'">职工</a></li>
+  </ul>
+  <form class="form-horizontal" ng-submit="confirm()" style="padding-top:28px;">
     <div class="form-group">
       <label for="card_no" class="col-sm-3 control-label">医保卡号</label>
       <div class="col-sm-9">

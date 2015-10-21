@@ -11,7 +11,7 @@ angular.module('Medicare')
                         var local = new BMap.LocalSearch(map, {
                                 renderOptions:{map: map, autoViewport:true}
                         });
-                        local.searchNearby("医院");
+                        local.searchNearby("药店");
                 };
                 if (!navigator.geolocation){
                         showMap({
