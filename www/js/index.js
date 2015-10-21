@@ -1,9 +1,12 @@
-document.addEventListener("deviceready", onDeviceReady, false);
+document.addEventListener("deviceready", onDeviceReady, true);
 function onDeviceReady(){
         document.addEventListener("backbutton", function(e){
                 e.preventDefault();
                 navigator.app.exitApp();
         }, false);
+        angular.element(document).ready(function() {
+                angular.bootstrap(document);
+        });
 }
 
 var medicare = angular.module('Medicare', [
