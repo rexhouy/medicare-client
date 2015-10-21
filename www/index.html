@@ -8,7 +8,14 @@
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
   </head>
-  <body ng-view="">
+  <body>
+    <div ng-view="">
+    </div>
+    <div class="spinner ng-cloak" ng-cloak ng-show="loading">
+      <img src="img/spinner.gif">
+    </div>
+    <div class="block-layer ng-cloak" ng-cloak ng-show="loading"></div>
+    <img src="img/spinner.gif" style="width:1px;">
   </body>
   <script type="text/javascript" src="cordova.js"></script>
   <script src="js/jquery-2.0.3.min.js"></script>

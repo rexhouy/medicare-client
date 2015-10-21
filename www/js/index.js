@@ -97,8 +97,14 @@ var medicare = angular.module('Medicare', [
                 .otherwise({
                         redirectTo: "/"
                 });
+}).run(function($rootScope, $location) {
+        $rootScope.$on( "$routeChangeStart", function(event, next, current) {
+                $rootScope.loading = true;
+        });
+        $rootScope.$on( "$routeChangeSuccess", function(event, next, current) {
+                $rootScope.loading = false;
+        });
 });
-
 
 $.support.cors = true;
 $.mobile.allowCrossDomainPages = true;
