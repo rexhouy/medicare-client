@@ -95,3 +95,7 @@ var medicare = angular.module('Medicare', [
                         redirectTo: "/"
                 });
 });
+
+
+$.support.cors = true;
+$.mobile.allowCrossDomainPages = true;
