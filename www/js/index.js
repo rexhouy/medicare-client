@@ -94,6 +94,14 @@ var medicare = angular.module('Medicare', [
                         templateUrl: 'suggestion_success.html',
                         controller: 'SuggestionCtrl'
                 })
+                .when("/account_history", {
+                        templateUrl: 'account_history.html',
+                        controller: 'AccountHistoryCtrl'
+                })
+                .when("/book_success", {
+                        templateUrl: 'book_success.html',
+                        controller: 'BookSuccessCtrl'
+                })
                 .otherwise({
                         redirectTo: "/"
                 });

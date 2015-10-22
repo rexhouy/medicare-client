@@ -11,59 +11,97 @@
   </div>
 </header>
 <div class="container" style="padding-top:28px;padding-bottom:28px;">
-  <form class="form-horizontal">
+  <ul class="nav nav-pills">
+    <li role="presentation" ng-class="type=='common'?'active':''"><a ng-click="type='common'">普通</a></li>
+    <li role="presentation" ng-class="type=='specialist'?'active':''"><a ng-click="type='specialist'">专家</a></li>
+  </ul>
+  <form class="form-horizontal" style="margin-top:28px;" ng-submit="confirm()">
     <div class="form-group">
       <label for="hospital" class="col-sm-3 control-label">就诊医院</label>
       <div class="col-sm-9">
-        <select class="form-control" id="hospital">
+        <select class="form-control" id="hospital" ng-model="hospital" required>
           <option></option>
-          <option value="1">云大医院</option>
-          <option value="2">昆医附二院</option>
-          <option value="3">昆明延安医院</option>
-          <option value="4">昆明43医院</option>
-          <option value="5">昆明市妇幼保健院</option>
-          <option value="6">昆华医院</option>
-          <option value="7">昆明市第一人民医院</option>
-          <option value="8">云南省中医院</option>
-          <option value="9">云南省肿瘤医院</option>
-          <option value="10">昆明市中医院</option>
-          <option value="11">云南省第三人民医院</option>
-          <option value="12">云南省精神卫生中心</option>
+          <option value="云大医院">云大医院</option>
+          <option value="昆医附二院">昆医附二院</option>
+          <option value="昆明延安医院">昆明延安医院</option>
+          <option value="昆明43医院">昆明43医院</option>
+          <option value="昆明市妇幼保健院">昆明市妇幼保健院</option>
+          <option value="昆华医院">昆华医院</option>
+          <option value="昆明市第一人民医院">昆明市第一人民医院</option>
+          <option value="云南省中医院">云南省中医院</option>
+          <option value="云南省肿瘤医院">云南省肿瘤医院</option>
+          <option value="昆明市中医院">昆明市中医院</option>
+          <option value="云南省第三人民医院">云南省第三人民医院</option>
+          <option value="云南省精神卫生中心">云南省精神卫生中心</option>
         </select>
       </div>
     </div>
     <div class="form-group">
       <label for="card_no" class="col-sm-3 control-label">就诊科室</label>
       <div class="col-sm-9">
-        <select class="form-control" id="department">
+        <select class="form-control" id="department" ng-model="department" required>
           <option></option>
-          <option value="1">神经内科</option>
-          <option value="2">心内科</option>
-          <option value="3">呼吸内科</option>
-          <option value="4">消化内科</option>
-          <option value="5">内分泌内科</option>
-          <option value="6">血液内科</option>
-          <option value="7">肾脏内科</option>
-          <option value="8">普通外科</option>
-          <option value="9">骨科</option>
-          <option value="10">泌尿外科</option>
-          <option value="11">胸外科</option>
-          <option value="12">心脏外科</option>
-          <option value="13">整形烧伤外科</option>
-          <option value="14">五官科</option>
+          <option value="神经内科">神经内科</option>
+          <option value="心内科">心内科</option>
+          <option value="呼吸内科">呼吸内科</option>
+          <option value="消化内科">消化内科</option>
+          <option value="内分泌内科">内分泌内科</option>
+          <option value="血液内科">血液内科</option>
+          <option value="肾脏内科">肾脏内科</option>
+          <option value="普通外科">普通外科</option>
+          <option value="骨科">骨科</option>
+          <option value="泌尿外科">泌尿外科</option>
+          <option value="胸外科">胸外科</option>
+          <option value="心脏外科">心脏外科</option>
+          <option value="整形烧伤外科">整形烧伤外科</option>
+          <option value="五官科">五官科</option>
         </select>
+      </div>
+    </div>
+    <div class="form-group" ng-show="type=='specialist' && hospital && department">
+      <label for="card_no" class="col-sm-3 control-label">专家</label>
+      <div class="col-sm-9">
+        <ul class="specialist">
+          <li ng-class="specialist==1?'active' : ''" ng-click="specialist=1">
+            <img class="col-sm-3 col-xs-3 img-circle" src="img/specialist.jpg">
+            <div class="col-sm-9 col-xs-9">
+              <h4>专家A<small>主任医师 副教授</small></h4>
+              <p>擅长： 冠心病、高血压、高血脂、心肌病、心力衰竭、瓣膜病</p>
+            </div>
+          </li>
+          <li ng-class="specialist==2 ? 'active' : ''" ng-click="specialist=2">
+            <img class="col-sm-3 col-xs-3 img-circle" src="img/specialist.jpg">
+            <div class="col-sm-9 col-xs-9">
+              <h4>专家B<small>副主任医师</small></h4>
+              <p>擅长： 心血管疾病的诊治</p>
+            </div>
+          </li>
+          <li ng-class="specialist==3? 'active' : ''" ng-click="specialist=3">
+            <img class="img-circle col-sm-3 col-xs-3" src="img/specialist.jpg">
+            <div class="col-sm-9 col-xs-9">
+              <h4>专家C<small>副主任医师</small></h4>
+              <p>擅长： 高血压、心衰、心内科疾病的诊治</p>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
     <div class="form-group">
       <label for="date" class="col-sm-3 control-label">就诊时间</label>
       <div class="col-sm-9">
-        <input type="date" id="date" class="form-control">
+        <input type="date" class="form-control" ng-model="date" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="date" class="col-sm-3 control-label">医保卡号</label>
+      <div class="col-sm-9">
+        <input type="number" class="form-control" ng-model="cardNo">
       </div>
     </div>
     <div class="form-group">
       <label for="date" class="col-sm-3 control-label">&nbsp;</label>
       <div class="col-sm-9">
-        <button class="btn btn-primary" style="display:block;width:100%;background:#197e7a;">确定</button>
+        <input type="submit" class="btn btn-primary btn-lg" style="display:block;width:100%;background:#197e7a;" value="确定"></input>
       </div>
     </div>
   </form>
